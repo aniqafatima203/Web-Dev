@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Delegation Example</title>
+</head>
+<body>
+
+    <ul id="parentList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        document.getElementById("parentList").addEventListener("click", function(event) {
+            if (event.target.tagName === "LI") { 
+                alert("You clicked on " + event.target.textContent);
+            }
+        });
+    </script>
+
+</body>
+</html>
