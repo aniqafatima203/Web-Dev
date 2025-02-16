@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Change Background Color</title>
+</head>
+<body>
+    <!-- Change background color everytime you click on button -->
+    <button onclick="changeColor()">Click Me</button>
+
+    <script>
+        function changeColor() {
+            document.body.style.backgroundColor = 
+                "#" + Math.floor(Math.random()*16777215).toString(16); // Generates random color
+        }
+    </script>
+
+</body>
+</html>
+
+
+
