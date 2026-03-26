@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved</title>
+    <link rel="stylesheet" href="saved.css">
+     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+<body>
+    <!-- Header Section -->
+<header class="header">
+    <div class="left-section">
+          <div class="logo"><i class="fa-brands fa-instagram"></i></div>
+          <div class="search-bar">
+            <i class="fas fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Here" />
+          </div>
+    </div>
+
+    <nav class="center-icons">
+        <div class="icon-boxes" data-label="Home">
+            <a href="home.html"><i class="fa-solid fa-house"></i></a>
+        </div>
+
+        <div class="icon-boxes" data-label="Friends">
+            <a href="msg.html"><i class="fa-solid fa-user-group"></i></a>
+        </div>
+
+        <div class="icon-boxes" data-label="Explore">
+            <a href="explore.html"><i class="fa-regular fa-compass"></i></a>
+        </div>
+
+        <div class="icon-boxes" data-label="Groups">
+            <a href="msg.html"><i class="fa-solid fa-users"></i></a>
+        </div>
+
+        <div class="icon-boxes" data-label="Videos">
+            <a href="reel.html"><i class="fa-solid fa-film"></i></a>
+        </div>
+    </nav>
+    <div class="right-icons">
+        <a href="#"><i class="fa-solid fa-gear"></i></a>
+        <a href="javascript:void(0)" onclick="openNotifications()">
+            <i class="fa-regular fa-bell"></i>
+        </a>
+        <a href="profile.html"><img src="assets/user1.jpg" alt="profile"></a>
+    </div>  
+</header>
+<div class="bottom-bar">
+    <a href="home.html"><i class="fa-solid fa-house"></i></a>
+    <a href="#createMenu"><i class="fa-solid fa-plus"></i></a>
+    <a href="msg.html"><i class="fa-solid fa-user-group"></i></a>
+    <a href="explore.html"><i class="fa-regular fa-compass"></i></a>
+    <a href="reel.html"><i class="fa-solid fa-film"></i></a>
+    <a href="profile.html"><img src="assets/user1.jpg" alt="profile"></a>
+
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-menu">
+        <a href="profile.html" class="sidebar-item">
+            <img src="assets/user1.jpg" alt="profile">
+        </a>
+        <a href="explore.html" class="sidebar-item">
+            <i class="fa-regular fa-compass"></i>
+        </a>
+        <a href="reel.html" class="sidebar-item">
+            <i class="fa-solid fa-film"></i>
+        </a>
+        <a href="msg.html" class="sidebar-item">
+            <i class="fa-regular fa-paper-plane"></i>
+        </a>
+        <a href="activity.html" class="sidebar-item">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </a>
+        <a href="saved.html" class="sidebar-item">
+            <i class="fa-regular fa-bookmark"></i>
+        </a>
+        <a href="javascript:void(0)" class="sidebar-item" onclick="openNotifications()">
+            <i class="fa-regular fa-bell"></i>
+        <a href="#createMenu" class="sidebar-item">
+            <i class="fa-solid fa-plus"></i>
+        </a>
+
+    </div>
+    <div class="bar">
+        <a href="#" class="sidebar-item">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <a href="#" class="sidebar-item">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </a>
+    </div>
+</div>
+<!-- CREATE POPUP MENU -->
+<div id="createMenu" class="popup-overlay">
+    <div class="popup-box">
+        <h2>Create</h2>
+        <a href="#postForm" class="create-option">Create Post</a>
+        <a href="#reelForm" class="create-option">Create Reel</a>
+        <a href="#storyForm" class="create-option">Create Story</a>
+
+        <a href="#" class="close-btn">Close</a>
+    </div>
+</div>
+<!-- POST FORM POPUP -->
+<div id="postForm" class="popup-overlay">
+    <div class="popup-box form-box">
+        <h2>Create Post</h2>
+
+        <form>
+            <label>Caption:</label>
+            <textarea placeholder="Write caption..."></textarea>
+
+            <label>Upload Image:</label>
+            <input type="file" />
+
+            <button type="submit" class="submit-btn">Post</button>
+        </form>
+
+        <a href="#createMenu" class="back-btn">Back</a>
+        <a href="#" class="close-btn">Close</a>
+    </div>
+</div>
+<!-- REEL FORM POPUP -->
+<div id="reelForm" class="popup-overlay">
+    <div class="popup-box form-box">
+        <h2>Create Reel</h2>
+
+        <form>
+            <label>Reel Description:</label>
+            <textarea placeholder="Say something..."></textarea>
+
+            <label>Upload Video:</label>
+            <input type="file" />
+
+            <button type="submit" class="submit-btn">Upload Reel</button>
+        </form>
+
+        <a href="#createMenu" class="back-btn">Back</a>
+        <a href="#" class="close-btn">Close</a>
+    </div>
+</div>
+<!-- STORY FORM POPUP -->
+<div id="storyForm" class="popup-overlay">
+    <div class="popup-box form-box">
+        <h2>Create Story</h2>
+
+        <form>
+            <label>Story Text (optional):</label>
+            <textarea placeholder="Write something..."></textarea>
+
+            <label>Upload Image / Video:</label>
+            <input type="file" />
+
+            <button type="submit" class="submit-btn">Add Story</button>
+        </form>
+
+        <a href="#createMenu" class="back-btn">Back</a>
+        <a href="#" class="close-btn">Close</a>
+    </div>
+</div>
+
+<!-- Notification Bar -->
+<div class="notif-overlay" id="notifOverlay" onclick="closeNotifications()"></div>
+
+<!-- Notifications Sidebar -->
+<div class="notif-sidebar" id="notifSidebar">
+
+  <div class="notif-header">
+    <h3>Notifications</h3>
+    <button class="close-btn" onclick="closeNotifications()">✕</button>
+  </div>
+
+  <div class="notif-list">
+
+    <div class="notif-item">
+      <img src="assets/user1.jpg">
+      <div class="notif-text">
+        <b>User1</b> sent you a follow request
+        <span>· 1h</span>
+      </div>
+      <button class="confirm-btn">Confirm</button>
+    </div>
+
+    <div class="notif-item">
+      <img src="assets/user1.jpg">
+      <div class="notif-text">
+        <b>User2</b> liked your story
+        <span>· 3h</span>
+      </div>
+    </div>
+
+    <div class="notif-item">
+      <img src="assets/user1.jpg">
+      <div class="notif-text">
+        <b>User3</b> mentioned you in a comment
+        <span>· 5h</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+function openNotifications(){
+  document.getElementById("notifSidebar").classList.add("active");
+  document.getElementById("notifOverlay").classList.add("active");
+}
+
+function closeNotifications(){
+  document.getElementById("notifSidebar").classList.remove("active");
+  document.getElementById("notifOverlay").classList.remove("active");
+}
+</script>
+<!-- Saved Page -->
+ <div class="saved-wrapper">
+    <h3 id="head-save">Saved</h3>
+        <!-- masonry grid here -->
+    <section class="saved">
+
+    <div class="masonry">
+
+        <!-- Image -->
+        <div class="item"><img src="assets/p1.jpg" alt=""></div>
+
+        <!-- Video -->
+        <div class="item">
+            <video src="assets/vid1.mp4" muted autoplay loop playsinline></video>
+        </div>
+
+        <!-- Image -->
+        <div class="item"><img src="assets/p2.jpg" alt=""></div>
+        <div class="item"><img src="assets/p3.jpg" alt=""></div>
+
+        <!-- More images/videos -->
+        <div class="item"><img src="assets/p4.jpg" alt=""></div>
+        <div class="item"><img src="assets/th1.jpg" alt=""></div>
+        <div class="item"><img src="assets/p5.jpg" alt=""></div>
+        <div class="item"><img src="assets/p6.jpg" alt=""></div>
+        <div class="item"><img src="assets/p7.jpg" alt=""></div>
+        <div class="item">
+            <video src="assets/vid2.mp4" muted autoplay loop playsinline></video>
+        </div>
+        <div class="item"><img src="assets/p8.jpg" alt=""></div>
+        <div class="item"><img src="assets/p9.jpg" alt=""></div>
+        <div class="item"><img src="assets/p10.jpg" alt=""></div>
+        <div class="item"><img src="assets/th2.jpg" alt=""></div>
+        <div class="item"><img src="assets/p13.jpg" alt=""></div>
+        <div class="item"><img src="assets/p14.jpg" alt=""></div>
+        <div class="item"><img src="assets/p15.jpg" alt=""></div>
+        <div class="item"><img src="assets/kit1.jpg" alt=""></div>
+        <div class="item"><img src="assets/kit2.jpg" alt=""></div>
+        
+        
+    </div>
+
+</section>
+</div>
+<!-- ADD THIS MODAL AT THE END OF BODY -->
+<div class="post-modal" id="postModal">
+
+
+<div class="post-card">
+<div class="post-media" id="postMedia"></div>
+
+<div class="post-info">
+<div class="post-header">
+    <img src="assets/user1.jpg" class="post-avatar" />
+    <span class="post-username">username_here</span>
+    <span class="post-close" id="closePost">✕</span>
+</div>
+
+
+<div class="post-caption">
+This is caption text.
+</div>
+
+
+<div class="post-actions">
+<i class="fa-regular fa-heart"></i>
+<i class="fa-regular fa-comment"></i>
+<i class="fa-regular fa-paper-plane"></i>
+<i id= "separate"class="fa-regular fa-bookmark"></i>
+</div>
+
+
+<div class="post-meta">
+  <div class="like-count">
+    <b>1,284 likes</b>
+  </div>
+  <div class="post-time">
+    1 day ago
+  </div>
+</div>
+
+<div class="comment-bar">
+  <i class="fa-regular fa-face-smile"></i>
+  <input type="text" placeholder="Add a comment..." />
+  <button disabled>Post</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ADD THIS SCRIPT -->
+<script>
+const modal = document.getElementById('postModal');
+const mediaBox = document.getElementById('postMedia');
+const closePost = document.getElementById('closePost');
+
+
+document.querySelectorAll('.masonry .item').forEach(item => {
+item.addEventListener('click', () => {
+const img = item.querySelector('img');
+const vid = item.querySelector('video');
+
+
+mediaBox.innerHTML = '';
+
+
+if (img) {
+const fullImg = document.createElement('img');
+fullImg.src = img.src;
+mediaBox.appendChild(fullImg);
+}
+
+
+if (vid) {
+const fullVid = document.createElement('video');
+fullVid.src = vid.src;
+fullVid.controls = true;
+fullVid.autoplay = true;
+mediaBox.appendChild(fullVid);
+}
+
+
+modal.classList.add('active');
+document.body.style.overflow = 'hidden';
+});
+});
+
+
+closePost.addEventListener('click', () => {
+modal.classList.remove('active');
+mediaBox.innerHTML = '';
+document.body.style.overflow = 'auto';
+});
+
+
+modal.addEventListener('click', e => {
+if (e.target === modal) closePost.click();
+});
+
+
+
+</script>
+
+
+</body>
+</html>
